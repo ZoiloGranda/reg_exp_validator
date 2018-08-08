@@ -1,3 +1,9 @@
+## Running
+
+Just open `index.html` on the browser 
+
+## Regular Expression tips
+
 `/\d/` Matches any digit character from 0 to9W. Equivalent to `[0-9]`.
 
 `^` Matches the start of the string
