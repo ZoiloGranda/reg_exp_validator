@@ -4,7 +4,7 @@ var inputChange = document.getElementById('input');
 inputChange.addEventListener('change', function () {
   var input = document.getElementById('input').value;
   var output = document.getElementById('output')
-  var pattern = /^\w{3,15}@\w{2,15}[.]\w{2,5}([.]\w{2,5})?$/;
+  var pattern = /^(music|sport|movie|book)$/;
   var result = pattern.test(input)
   output.textContent = result;
 })

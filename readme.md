@@ -4,7 +4,7 @@ Just open `index.html` on the browser
 
 ## Regular Expression tips
 
-`/\d/` Matches any digit character from 0 to9W. Equivalent to `[0-9]`.
+`/\d/` Matches any digit character from 0 to 9. Equivalent to `[0-9]`.
 
 `^` Matches the start of the string
 
@@ -45,3 +45,5 @@ Just open `index.html` on the browser
 `/^\w{3,15}@\w{2,15}[.]\w{2,5}$/` email validation, matches 3 to 15 word characters, then @, then 2 to 15 word characters then . then 2 to 5 word characters
 
 `/^\w{3,15}@\w{2,15}[.]\w{2,5}([.]\w{2,5})?$/` email validation, matches 3 to 15 word characters, then @, then 2 to 15 word characters then a dot then 2 to 5 word characters, then an optional dot then 2 to 5 word characters
+
+`/^(music|sport|movie|book)$/` Matches only one of those words
