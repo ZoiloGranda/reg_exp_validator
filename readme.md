@@ -47,3 +47,9 @@ Just open `index.html` on the browser
 `/^\w{3,15}@\w{2,15}[.]\w{2,5}([.]\w{2,5})?$/` email validation, matches 3 to 15 word characters, then @, then 2 to 15 word characters then a dot then 2 to 5 word characters, then an optional dot then 2 to 5 word characters
 
 `/^(music|sport|movie|book)$/` Matches only one of those words
+
+`/^is/` Matches if the string starts with `is`
+
+`/is$/` Matches if the string ends with `is`
+
+`/\bis\b/` Matches the whole word `is`. The `b` operator matches a word boundary position between a word character and non-word character or position 
