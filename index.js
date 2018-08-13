@@ -4,9 +4,9 @@ var inputChange = document.getElementById('input');
 inputChange.addEventListener('change', function () {
   var input = document.getElementById('input').value;
   var output = document.getElementById('output')
-  var pattern = /\bis\b/;
-  var result = pattern.test(input)
-  output.textContent = result;
+  var pattern = /\d+/;
+  var result = pattern.exec(input)
+  output.textContent = result + ' - index: '+ result.index;
 })
 
 
