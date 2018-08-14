@@ -2,6 +2,30 @@
 
 Just open `index.html` on the browser 
 
+## Regular Expression methods
+
+`regexp.exec()` This method returns the matched text if it finds a match, otherwise it returns null.
+```
+var str = "The best things in life are free";
+var patt = new RegExp("e");
+var res = patt.exec(str);
+//returns e
+```
+
+`regexp.test()` This method returns true if it finds a match, otherwise it returns false.
+```
+var str = "The best things in life are free";
+var patt = new RegExp("e");
+var res = patt.test(str);
+//returns true
+```
+`string.match()` This method searches a string for a match against a regular expression, and returns the matches, as an Array object. 
+```
+var str = "The rain in SPAIN stays mainly in the plain"; 
+var res = str.match(/ain/g);
+//returns ain,ain,ain
+```
+
 ## Regular Expression tips
 
 `/\d/` Matches any digit character from 0 to 9. Equivalent to `[0-9]`.
