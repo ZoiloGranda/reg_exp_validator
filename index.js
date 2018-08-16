@@ -5,7 +5,7 @@ inputChange.addEventListener('change', function () {
   var input = document.getElementById('input').value;
   var output = document.getElementById('output')
   var pattern = /\d+/;
-  var result = pattern.exec(input)
+  var result = input.replace(/[^\w\s]/gi, '')
   output.textContent = result + ' - index: '+ result.index;
 })
 

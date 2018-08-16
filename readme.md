@@ -2,7 +2,7 @@
 
 Just open `index.html` on the browser 
 
-## Regular Expression methods
+## Regular Expression and String methods
 
 `regexp.exec()` This method returns the matched text if it finds a match, otherwise it returns null.
 ```
@@ -26,13 +26,27 @@ var res = str.match(/ain/g);
 //returns ain,ain,ain
 ```
 
+`string.replace()` This method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
+```
+var str = "Mr Blue has a blue house and a blue car";
+var res = str.replace(/blue/g, "red");
+//returns "Mr Blue has a red house and a red car".
+```
+```
+//replacing special characters from a string
+var str = "thi!s ha/s sp#eci(a?l ch#ar{acte+rs";
+var res = str.replace(/[^\w\s]/gi, '');
+returns "this has special characters"
+```
 ## Regular Expression tips
 
 `/\d/` Matches any digit character from 0 to 9. Equivalent to `[0-9]`.
 
-`^` Matches the start of the string
+`^` Caret symbol. when inside and at the start of `[]`, like `[^...]`, means "not the following" . When it's inside `[]` but not at the start, it means the actual `^` character. When it's escaped `\^`, it also means the actual `^` character. In all other cases it means start of the string or line .
 
 `$` Matches the end of the string
+
+`s` Matches white spaces
 
 `/^\d$/` Matches only one digit character
 
