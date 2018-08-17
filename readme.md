@@ -3,30 +3,33 @@
 Just open `index.html` on the browser 
 
 ## Regular Expression and String methods
-
-`regexp.exec()` This method returns the matched text if it finds a match, otherwise it returns null.
+#### `regexp.exec()`
+This method returns the matched text if it finds a match, otherwise it returns null.
 ```
 var str = "The best things in life are free";
 var patt = new RegExp("e");
 var res = patt.exec(str);
 //returns e
 ```
-
-`regexp.test()` This method returns true if it finds a match, otherwise it returns false.
+#### `regexp.test()` 
+This method returns true if it finds a match, otherwise it returns false.
 ```
 var str = "The best things in life are free";
 var patt = new RegExp("e");
 var res = patt.test(str);
 //returns true
+
 ```
-`string.match()` This method searches a string for a match against a regular expression, and returns the matches, as an Array object. 
+#### `string.match()` 
+ This method searches a string for a match against a regular expression, and returns the matches, as an Array object. 
 ```
 var str = "The rain in SPAIN stays mainly in the plain"; 
 var res = str.match(/ain/g);
 //returns ain,ain,ain
 ```
+#### `string.replace()` 
+ This method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
 
-`string.replace()` This method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
 ```
 var str = "Mr Blue has a blue house and a blue car";
 var res = str.replace(/blue/g, "red");
@@ -36,8 +39,19 @@ var res = str.replace(/blue/g, "red");
 //replacing special characters from a string
 var str = "thi!s ha/s sp#eci(a?l ch#ar{acte+rs";
 var res = str.replace(/[^\w\s]/gi, '');
-returns "this has special characters"
+//returns "this has special characters"
 ```
+
+The second parameter of the `replace()`, the matched elements can be accessed with `$`
+```
+var str = "Zoilo Granda"
+var res = str.replace(/(\w+) (\w+)/, '$2 $1')
+//Primero busca un grupo de caracteres de palabra, y lo almacena en $1 porque es el primer match
+//Segundo busca otro grupo de caracteres de palabra, y lo almacena en $2 porque es el segundo match
+//Los parametros del replace '$2 $1' invierten el orden del string
+//returns Granda Zoilo
+```
+
 ## Regular Expression tips
 
 `/\d/` Matches any digit character from 0 to 9. Equivalent to `[0-9]`.
