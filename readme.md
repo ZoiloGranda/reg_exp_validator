@@ -42,14 +42,29 @@ var res = str.replace(/[^\w\s]/gi, '');
 //returns "this has special characters"
 ```
 
-The second parameter of the `replace()`, the matched elements can be accessed with `$`
+On the second parameter of the `replace()`, the matched elements can be accessed with `$`
 ```
 var str = "Zoilo Granda"
 var res = str.replace(/(\w+) (\w+)/, '$2 $1')
-//Primero busca un grupo de caracteres de palabra, y lo almacena en $1 porque es el primer match
-//Segundo busca otro grupo de caracteres de palabra, y lo almacena en $2 porque es el segundo match
-//Los parametros del replace '$2 $1' invierten el orden del string
+//First looks for a group of word character, and stores it on `$1` because is the first match
+//Then looks for another group of word character, and stores it on `$2` because is the second match
+//reverting the return parameters '$2 $1', returns the inverted string
 //returns Granda Zoilo
+```
+The `replace` method can also take a function as a second parameter. The first parameter of the callback function is the matched substring for each match (`'1 arepa', '2 pizzas', '3 empanadas'`). The following parameters will be as many as the regexp group patterns are, in this case there are two group patterns `(\d+) (\w+)`, means one parameter will be the digits characters (`'1','2','3'`), and the other parameter the word characters(`'arepa','pizzas', 'empanadas'`)
+```
+var price =5;
+var input = "1 arepa, 2 pizzas, 3 empanadas"
+function increase(match, amount, food){
+  amount = parseInt(amount)*price;
+  return fruit +': $' + amount + '<br>';
+}
+var result = input.replace(/(\d+) (\w+),?/g, increase)
+/*
+arepa: $5
+pizzas: $10
+empanadas: $15
+*/
 ```
 
 ## Regular Expression tips
