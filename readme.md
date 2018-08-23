@@ -92,7 +92,7 @@ empanadas: $15
 ```javascript
 var reg = /".+"/g;
 var str = 'the "man" was trying to "help" her';
-str.match(reg); //returns "man" was trying to "help"
+str.match(reg); //returns ["man" was trying to "help"]
 ```
 
 Instead of returning two separate strings `"man"` and `"help"`, it returns a string from the first quote to the final quote. That's because the quantifier `+`, is Greedy, it will try to match the longest string to the regular expression given. If we add the `?`, we change the quantifier from Greedy to Lazy, it will return the two words inside the quotes, because the regular expression will try to match the minimun amount of characters on the result.
