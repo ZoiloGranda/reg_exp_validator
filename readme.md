@@ -87,7 +87,21 @@ empanadas: $15
 
 `/^\d*$/` Matches one or more number of digits from the start of the string
 
-`?` The optional operator. Matches zero or one of the preceding characters of the string
+`?` The optional operator. Matches zero or one of the preceding characters of the string. If used after a another quantifier or even itself, it switches the matching mode from Greedy to Lazy.
+
+```javascript
+var reg = /".+"/g;
+var str = 'the "man" was trying to "help" her';
+str.match(reg); //returns "man" was trying to "help"
+```
+
+Instead of returning two separate strings `"man"` and `"help"`, it returns a string from the first quote to the final quote. That's because the quantifier `+`, is Greedy, it will try to match the longest string to the regular expression given. If we add the `?`, we change the quantifier from Greedy to Lazy, it will return the two words inside the quotes, because the regular expression will try to match the minimun amount of characters on the result.
+
+```javascript
+var reg = /".+?"/g;
+var str = 'the "man" was trying to "help" her';
+str.match(reg); //returns ["man" ,"help]"
+```
 
 `/^\d{3}$/` Matches exactly three digits from the start of the string
 
