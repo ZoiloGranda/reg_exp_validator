@@ -1,8 +1,8 @@
 $(function() {
   //the fn object is where jquery functions are stored
-  $.fn.email= function () {
+  $.fn.email= function (customOptions) {
     var $this = $(this);
-    var options = $.fn.email.defaultOptions;
+    var options = $.fn.extend({},$.fn.email.defaultOptions, customOptions);
     var pattern = options.pattern;
     if (options.required===false) {
       //required means if the password is mandatory, if it is false
@@ -25,11 +25,14 @@ $(function() {
   }
   $.fn.email.defaultOptions={
     required: true,
-    pattern:/^\w{2,15}@\w{2,15}[.]\w{2,5}([.](us|cn|fr))?$/
+    pattern: /^\w{2,15}@\w{2,15}[.]\w{2,5}([.](us|cn|fr))?$/
   }
 })
 
 $('button').click(function(){
-  var isEmailValid = $('#email').email();
+  var options = {
+    pattern: /^\w{2,15}@\w{2,15}[.]\w{2,5}?$/
+  }
+  var isEmailValid = $('#email').email(options);
   console.log("is email valid: "+isEmailValid);
 })
