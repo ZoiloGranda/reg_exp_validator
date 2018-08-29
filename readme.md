@@ -145,8 +145,8 @@ str.match(reg); //returns ["man" ,"help]"
 
 `new RegExp()` When the regular expression needs to be generated dinamically, it has to be created with the `new` keyword
 ```javascript
-var minLenght: 10;
-var maxLenght: 30;
-var p = new RegExp('\^[a-zA-Z\\s]{'+minLenght+','+maxLenght+'}\$', 'i');
+var minLenght = 10;
+var maxLenght = 30;
+var pattern = new RegExp('\^[a-zA-Z\\s]{'+minLenght+','+maxLenght+'}\$', 'i');
 // the second parameter are the regexp flags, like 'i' for case insensitive
 ```
