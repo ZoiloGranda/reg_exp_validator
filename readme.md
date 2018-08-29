@@ -143,7 +143,7 @@ str.match(reg); //returns ["man" ,"help]"
 
 `/^(?=.*\d+.*)(?=.*[A-Z]+.*)\w{4,8}$/` Here the lookAhead `?=`, is used to check if the password has one or more digits, anywhere on the string `'.*\d+.*'`, then checks if it has an uppercase letter anywhere on the string `'.*[A-Z]+.*'`,and if both lookAheads are true, checks if the string has four to eight characters long `\w{4,8}$`
 
-`new RegExp` When the regular expression needs to be generated dinamically, it has to be created with the `new` keyword
+`new RegExp()` When the regular expression needs to be generated dinamically, it has to be created with the `new` keyword
 ```javascript
 var minLenght: 10;
 var maxLenght: 30;
